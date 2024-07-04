@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<title>Pasha the BEST!!!</title>
+</head>
+<body>
+<h1>Аренда техники</h1><hr>
+<h4>Подробная информация</h4>
+<div>
+		<p><h3>ID: <td th:text="${product.id}"></h3></td></p>
+		<p><h3>Категория: <td th:text="${product.category}"></h3></td></p>
+		<p><h3>Линейка: <td th:text="${product.productionRuler}"></h3></td></p>
+		<p><h3>Название: <td th:text="${product.title}"></td></h3></p>
+		<p><h3>Серийный номер: <td th:text="${product.serialNumber}"></h3></td></p>
+		<p><h3>Описание: <td th:text="${product.description}"></h3></td></p>
+		<p><h3>Рыночная цена: <td th:text="${product.marketPrice} + ' руб.'"></h3></td></p>
+		<p><h3>Закупочная: <td th:text="${product.purchasePrice} + ' руб.'"></h3></td></p>
+		<p><h3>Комментарий: <td th:text="${product.comment}"></h3></td></p>
+</div>
+<h3>Удаление объявления</h3>
+<form th:action="@{/product/delete/{id}(id=${product.id})}" method="post">
+    <input type="submit" value="Удалить">
+</form>
+</body>
+</html>
